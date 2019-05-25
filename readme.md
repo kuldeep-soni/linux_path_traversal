@@ -1,4 +1,4 @@
-terminal.py is the main file while runs an infinite loop. You can exit the terminal using exit().
+terminal.py is the main file which runs an infinite loop. You can exit the terminal using exit().
 terminal.py uses 'Linux' class of module 'linux_interface.py' for processing queries sent by user.
 Code is appropriately commented wherever required.
 
