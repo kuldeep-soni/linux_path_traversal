@@ -5,15 +5,24 @@ Code is appropriately commented wherever required.
 module 'linux_interface.py' description:
 
 class Node:
-	attributes( path : String, parent_node : Node, children: List[Node])
+
+	attributes: 
+                path : String
+                parent_node : Node
+                children: List[Node])
 	
 class Linux:
-	attributes( _root : Node, _current, _query : String)
+
+	attributes:
+                _root : Node
+                _current 
+                _query : String
+                
 	methods:
-		public: 
+		public_methods:
 			 getwd() : returns current directory
 			 set_query(query : String) : sends query from terminal to linux_interface
-		private:
+		private_methods:
 			_cd(args : List[string]) : change directory (abs or rel path)
 			_rm(args : List[string]) : remove dir (abs or rel path)
 			_mkdir(args : List[string]) : create dir (abs or rel path)
