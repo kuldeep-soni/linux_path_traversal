@@ -1,0 +1,106 @@
+$ <Starting your application...>
+$ /root >> pwd
+    PATH: /
+$ /root >> cd some/random
+    ERR: INVALID PATH
+$ /root >> mkdir dir1
+    SUCC: CREATED
+$ /root >> mkdir dir1
+    ERR: DIRECTORY ALREADY EXISTS
+$ /root >> mkdir dir2
+    SUCC: CREATED
+$ /root >> ls
+    DIRS: dir1 dir2
+$ /root >> cd dir1
+    SUCC: REACHED
+$ /root/dir1 >> pwd
+    PATH: /dir1
+$ /root/dir1 >> cd /
+    SUCC: REACHED
+$ /root >> rm /dir1
+    SUCC: DELETED
+$ /root >> cd /dir1
+    ERR: INVALID PATH
+$ /root >> mkdir /dir3
+    SUCC: CREATED
+$ /root >> cd /dir2
+    SUCC: REACHED
+$ /root/dir2 >> pwd
+    PATH: /dir2
+$ /root/dir2 >> session clear
+    SUCC: CLEARED: RESET TO ROOT
+$ /root >> pwd
+    PATH: /
+$ /root >> asdf adkl s
+    ERR: CANNOT RECOGNIZE INPUT.
+$ /root >> ls
+    DIRS:
+$ /root >> mkdir a
+    SUCC: CREATED
+$ /root >> mkdir b
+    SUCC: CREATED
+$ /root >> mkdir c
+    SUCC: CREATED
+$ /root >> ls
+    DIRS: a b c
+$ /root >> cd a
+    SUCC: REACHED
+$ /root/a >> mkdir d
+    SUCC: CREATED
+$ /root/a >> mkdir e
+    SUCC: CREATED
+$ /root/a >> mkdir f
+    SUCC: CREATED
+$ /root/a >> ls
+    DIRS: d e f
+$ /root/a >> cd e
+    SUCC: REACHED
+$ /root/a/e >> mkdir p
+    SUCC: CREATED
+$ /root/a/e >> mkdir r
+    SUCC: CREATED
+$ /root/a/e >> mkdir s
+    SUCC: CREATED
+$ /root/a/e >> cd r
+    SUCC: REACHED
+$ /root/a/e/r >> mkdir t
+    SUCC: CREATED
+$ /root/a/e/r >> mkdir u
+    SUCC: CREATED
+$ /root/a/e/r >> cd /
+    SUCC: REACHED
+$ /root >> ls
+    DIRS: a b c
+$ /root >> cd /root/a/e
+    SUCC: REACHED
+$ /root/a/e >> ls
+    DIRS: p r s
+$ /root/a/e >> rm r
+    SUCC: DELETED
+$ /root/a/e >> ls
+    DIRS: p s
+$ /root/a/e >> pwd
+    PATH: /a/e
+$ /root/a/e >> cd /root/a/d
+    SUCC: REACHED
+$ /root/a/d >> pwd
+    PATH: /a/d
+$ /root/a/d >> rm /root/e
+    ERR: INVALID PATH
+$ /root/a/d >> rm /root/a/e
+    SUCC: DELETED
+$ /root/a/d >> cd ..
+    SUCC: REACHED
+$ /root/a >> ls
+    DIRS: d f
+$ /root/a >> cd /
+    SUCC: REACHED
+$ /root >> ls
+    DIRS: a b c
+$ /root >> cd /a/f
+    SUCC: REACHED
+$ /root/a/f >> session random
+    ERR: INVALID COMMAND
+$ /root/a/f >> session clear
+    SUCC: CLEARED: RESET TO ROOT
+$ exit()
